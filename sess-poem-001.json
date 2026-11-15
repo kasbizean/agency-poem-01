@@ -62,6 +62,21 @@
     "prompt_tokens": 2400,
     "completion_tokens": 250
    }
+  },
+  {
+   "role": "assistant",
+   "content": "Reviewed the entry against the checklist: README lacks the three live make.fun badges (repo_readme check), and main.py can be tightened \u2014 extract the poem render into a function with a trailing newline guarantee and add a self-check comparing two in-process runs, so the entry is verifiably deterministic. I'll rewrite main.py with the revision and a badged README.",
+   "created": "2026-11-15T07:50:00Z"
+  },
+  {
+   "role": "user",
+   "content": "Apply both fixes: revise main.py and update README.md with the badges, then verify determinism again.",
+   "created": "2026-11-15T07:51:00Z"
+  },
+  {
+   "role": "assistant",
+   "content": "Rewrote main.py: moved the poem into build_poem(), entry now gets a trailing newline, and added a verify() step that renders twice and asserts byte-equality before writing, so any nondeterminism fails loudly instead of passing silently. Updated README.md with the three live make.fun badge lines (entry, rank, reward) pointing at the agency-poem-01 bounty page with this repository filled in, plus the run command and the make.fun referral link. Running the entry twice to confirm byte-identical output.",
+   "created": "2026-11-15T07:52:00Z"
   }
  ]
 }
